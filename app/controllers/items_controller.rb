@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :params_item, only: [:show, :edit]
-
+  before_action :authenticate_user!
+  
   def index
     @items = Item.all
   end

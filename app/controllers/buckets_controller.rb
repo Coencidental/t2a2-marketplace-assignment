@@ -1,6 +1,7 @@
 class BucketsController < ApplicationController
   before_action :params_bucket, only: [:show, :edit, :update]
-
+  before_action :authenticate_user!
+  
   def index
     @buckets = Bucket.all.order(user_id: :desc)
   end
