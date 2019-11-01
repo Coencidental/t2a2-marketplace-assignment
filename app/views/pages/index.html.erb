@@ -1,5 +1,4 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<h1>Welcome, <%= current_user.username %>!</h1>
 
 <%= link_to "Go to the item buckets page", buckets_path %>
 <%= link_to "Go to your inbox", conversations_path %>
