@@ -37,9 +37,13 @@ class ItemsController < ApplicationController
   end
 
   def destroy 
-    bucket = params[:bucket_id]
-    Item.find(params[:item_id]).destroy
-    redirect_to bucket_items_path(bucket)
+    
+    @item = Item.find_by(id: params[:id])
+    @bucket = Bucket.find_by(id: params[:bucket_id])
+    @item.destroy
+    redirect_to bucket_path(@bucket)
+    
+    
   end 
 
   private 
