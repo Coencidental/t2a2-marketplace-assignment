@@ -13,4 +13,8 @@ class Conversation < ApplicationRecord
     self.sender_id == current_user.id ? self.receiver : self.sender
   end
 
+  def unread_message_count(current_user)
+    self.messages.where("user_id != ? AND read = ?", current_user.id, false).count
+  end
+
 end

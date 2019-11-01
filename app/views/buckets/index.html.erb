@@ -1,12 +1,14 @@
 <table>
     <tr>
       <th>Name</th>
+      <th>User</th>
       <th>Description</th>
     </tr>
     
     <% @buckets.each do |bucket| %>
     <tr>
       <td><p><%= link_to bucket.name, bucket_path(bucket) %></p></td>
+      <td><%= link_to bucket.user.username, user_profile_path(bucket.user) %></td>
       <td><p><%= bucket.description %></p></td>
     </tr>
     <% if bucket.user == current_user %>

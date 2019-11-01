@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  get 'messages/index'
+  get 'users/:id', to: 'users#show', as: 'user_profile'
   root 'pages#index'
   get 'about', to: 'pages#about'
   get 'buckets/user', to: 'buckets#user', as: 'user_buckets'

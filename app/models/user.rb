@@ -4,6 +4,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   after_create :assign_default_role
   has_many :buckets, dependent: :destroy
+  validates :username, presence: true
+  validates_uniqueness_of :username
+  validates_uniqueness_of :email
 
   def assign_default_role
     add_role(:user)
