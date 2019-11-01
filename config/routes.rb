@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  get 'users/:id', to: 'users#show', as: 'user_profile'
+  
   root 'pages#index'
   get 'about', to: 'pages#about'
   get 'buckets/user', to: 'buckets#user', as: 'user_buckets'
@@ -19,5 +19,5 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
-
+  get 'users/:id', to: 'users#show', as: 'user_profile'
 end
