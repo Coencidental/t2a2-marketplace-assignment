@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   
+  get 'items/index'
+  get 'items/show'
+  get 'items/new'
+  get 'items/edit'
   root 'pages#index'
-  get 'pages/about'
+  get 'about', to: 'pages#about'
   get 'buckets/user', to: 'buckets#user', as: 'user_buckets'
 
   resources :buckets do 
