@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @bucket = Bucket.find(params[:bucket_id])
   end
 
   def create 
@@ -47,6 +48,8 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  # Paramater sanitization
+  
   def item_params
     params.require(:item).permit(:name, :brand, :description, :returnable, :price)
   end

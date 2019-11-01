@@ -1,5 +1,6 @@
-<h1>Items#new</h1>
-<p>Find me in app/views/items/new.html.erb</p>
+<%= render 'shared/errors', object:@item %>
+
+<h1>Add an item to <%= @bucket.name %></h1>
 
 <%= form_with scope: @item, local: true do |f| %>
 

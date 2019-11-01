@@ -1,2 +1,13 @@
-<h1>Items#edit</h1>
-<p>Find me in app/views/items/edit.html.erb</p>
+<%= render 'shared/errors', object:@item %>
+
+<h1>Edit <%= @item.name %></h1>
+
+<%= form_with scope: @item, local: true do |f| %>
+
+<p><%= f.text_field :name%></p>
+<p><%= f.text_field :brand %></p>
+<p><%= f.text_area :description %></p>
+<p><%= f.text_area :returnable %></p>
+<p><%= f.number_field :price, step: :any %></p>
+<p><%= f.submit %></p>
+<% end %>
