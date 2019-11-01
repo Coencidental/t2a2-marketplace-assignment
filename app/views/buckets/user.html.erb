@@ -1,2 +1,21 @@
 <h1>Buckets#user</h1>
 <p>Find me in app/views/buckets/user.html.erb</p>
+
+<% if @buckets != nil %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  
+  <% @buckets.each do |bucket| %>
+  <tr>
+    <td><p><%= bucket.name %></p></td>
+    <td><p><%= bucket.description %></p></td>
+  </tr>
+
+  <% end %>
+</table>
+<% else %>
+  <p>You have no buckets yet!</p>
+<% end %>
