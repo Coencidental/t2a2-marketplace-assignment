@@ -13,6 +13,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :conversations, only: [:index, :create] do
+    resources :messages, only: [:index, :create]
+  end
+
   devise_for :users
 
 end
