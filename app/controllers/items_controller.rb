@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :params_item, only: [:show, :edit]
   before_action :authenticate_user!
-  
+
   def index
     @items = Item.all
   end
@@ -17,6 +17,7 @@ class ItemsController < ApplicationController
   def create 
     @bucket = Bucket.find(params[:bucket_id])
     @item = @bucket.items.new(item_params)
+    # @item.image.attach(item_params[:image])
     if @item.save
       redirect_to bucket_path(@bucket)
     else
@@ -56,6 +57,6 @@ class ItemsController < ApplicationController
   # Paramater sanitization
   
   def item_params
-    params.require(:item).permit(:name, :brand, :description, :returnable, :price)
+    params.require(:item).permit(:name, :brand, :description, :returnable, :price, :image)
   end
 end

@@ -9,5 +9,6 @@
 <p><%= f.text_area :description, placeholder: "Enter an item description" %></p>
 <p><%= f.text_area :returnable, placeholder: "Enter a returns policy (if you'd be open to having the item back, for example)" %></p>
 <p><%= f.number_field :price, step: :any %></p>
+<p><%= f.file_field :image %></p>
 <p><%= f.submit %></p>
 <% end %>
