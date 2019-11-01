@@ -1,2 +1,12 @@
 <h1>Items#new</h1>
 <p>Find me in app/views/items/new.html.erb</p>
+
+<%= form_with scope: @item, local: true do |f| %>
+
+<p><%= f.text_field :name, placeholder: "Enter a name" %></p>
+<p><%= f.text_field :brand, placeholder: "Enter a brand, or homemade/unknown" %></p>
+<p><%= f.text_area :description, placeholder: "Enter an item description" %></p>
+<p><%= f.text_area :returnable, placeholder: "Enter a returns policy (if you'd be open to having the item back, for example)" %></p>
+<p><%= f.number_field :price, step: :any %></p>
+<p><%= f.submit %></p>
+<% end %>

@@ -15,7 +15,7 @@
   <% @bucket.items.each do |item| %>
 
     <tr>
-      <td><%= item.name %></td>
+      <td><%= link_to item.name, bucket_item_path(item) %></td>
       <td><%= item.brand %></td>
       <td><%= item.description %></td>
       <td><%= item.price %></td>
@@ -25,10 +25,10 @@
 
   <% end%>
   </table>
-
+  <%= link_to "Add an item", new_bucket_item_path(@bucket) %>
   <% else %>
 
-  <p><%= @bucket.name %> has no items yet!</p>
+  <p><%= @bucket.name %> has no items yet!  <%= link_to "Add some now!", new_bucket_item_path(@bucket) %></p>
 <% end %>
 
 

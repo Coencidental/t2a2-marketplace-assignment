@@ -39,7 +39,7 @@ class BucketsController < ApplicationController
     if @bucket.update(bucket_params)
       redirect_to @bucket
     else
-      flash[:alert] = "Could not update!"
+      flash[:alert] = "Could not update bucket!"
       render :edit
     end
   end
@@ -56,7 +56,7 @@ class BucketsController < ApplicationController
   end
 
   # Paramater sanitization
-  
+
   def bucket_params
     params.require(:bucket).permit(:name, :description)
   end
