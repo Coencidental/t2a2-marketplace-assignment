@@ -1,2 +1,9 @@
-<h1>Buckets#new</h1>
-<p>Find me in app/views/buckets/new.html.erb</p>
+<h1>Create a new bucket!</h1>
+
+<%= form_with model: @bucket, local: true do |f| %>
+
+<p><%= f.text_field :name, placeholder: "Enter a bucket name" %></p>
+<p><%= f.text_area :description, placeholder: "Enter a bucket description" %></p>
+<p><%= f.submit %></p>
+
+<% end %>

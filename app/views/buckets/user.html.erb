@@ -10,12 +10,17 @@
   
   <% @buckets.each do |bucket| %>
   <tr>
-    <td><p><%= bucket.name %></p></td>
+    <td><p><%= link_to bucket.name, bucket_path(bucket) %></p></td>
     <td><p><%= bucket.description %></p></td>
+  </tr>
+  <tr>
+    <td><%= link_to "Delete this bucket", bucket_destroy_path(bucket), :data => {:confirm => 'Are you sure?  This will delete any items in the bucket too.'} %></td>
+    <td><%= link_to "Edit this bucket", edit_bucket_path(bucket) %></td>
   </tr>
 
   <% end %>
 </table>
+<p><%= link_to "Create a new bucket!", new_bucket_path %></p>
 <% else %>
   <p>You have no buckets yet!</p>
 <% end %>
