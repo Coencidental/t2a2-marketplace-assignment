@@ -2,6 +2,8 @@ class LocationsController < ApplicationController
 
   def show
     @location = current_user.location
+    @locations = Location.all
+    @users = User.all
   end
 
   def new
