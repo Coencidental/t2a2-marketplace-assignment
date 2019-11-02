@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  
-  
+  get 'locations/new', to: 'locations#new', as: 'new_location'
+  post 'locations/new', to: 'locations#create'
+  resources :locations, only: [:show, :edit, :create, :update]
   root 'pages#index'
   get 'about', to: 'pages#about'
   get 'buckets/user', to: 'buckets#user', as: 'user_buckets'

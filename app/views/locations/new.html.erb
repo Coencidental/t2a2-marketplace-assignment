@@ -1,0 +1,9 @@
+<h1>Locations#new</h1>
+<p>Find me in app/views/locations/new.html.erb</p>
+
+<%= form_with scope: :location, local: true do |f| %>
+
+<%= f.text_area :address, placeholder: 'Your address, as completely and descriptively as you know it, E.G: 123 Test Street, Suburbia, State, Country' %>
+<%= f.submit %>
+
+<% end %>

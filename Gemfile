@@ -70,3 +70,5 @@ gem "rolify", "~> 5.2"
 gem "cloudinary", "~> 1.12"
 
 gem "activestorage-cloudinary-service", "~> 0.2.3"
+
+gem "geocoder", "~> 1.5"

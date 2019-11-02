@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates :username, presence: true
   validates_uniqueness_of :username
   validates_uniqueness_of :email
+  has_one :location, dependent: :destroy
 
   def assign_default_role
     add_role(:user)
