@@ -2,8 +2,23 @@ class BucketsController < ApplicationController
   before_action :params_bucket, only: [:show, :edit, :update]
   before_action :authenticate_user!
   
+  require 'geocoder'
+
   def index
     @buckets = Bucket.all.order(user_id: :desc)
+    @location = current_user.location
+    @locations = Location.all
+    @users = User.all
+    @sortedusers = []
+
+    @locations.each do |location|
+      unless location === @location
+      @sortedusers << [location.distance_to(@location), location]
+      end
+    end
+
+    @sortedusers.sort
+
   end
 
   def user

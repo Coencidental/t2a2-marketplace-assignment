@@ -13,6 +13,10 @@ class User < ApplicationRecord
     add_role(:user)
   end
   
+  def proximity_from(user) 
+    
+  end
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
