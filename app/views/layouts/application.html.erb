@@ -15,6 +15,7 @@
       <%= link_to 'All buckets', buckets_path %>
       <%= link_to 'Your buckets', user_buckets_path %>
       <%= link_to 'Your inbox', conversations_path %>
+      <%= link_to 'Your profile', user_profile_path(current_user) %>
     <% else %>
       <%= link_to 'Sign up', new_user_registration_path %>
       <%= link_to 'Sign in', new_user_session_path %>

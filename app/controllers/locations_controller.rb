@@ -22,6 +22,12 @@ class LocationsController < ApplicationController
     @location = current_user.location
   end
 
+  def update  
+    @location = current_user.location 
+    @location.update(location_params)
+    redirect_to @location
+  end
+
   private
 
 

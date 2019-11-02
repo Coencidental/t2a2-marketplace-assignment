@@ -1,2 +1,8 @@
-<h1>Locations#edit</h1>
-<p>Find me in app/views/locations/edit.html.erb</p>
+<h1>What is your home browsing location?</h1>
+
+<%= form_with model: @location, local: true do |f| %>
+
+<%= f.text_area :address %>
+<%= f.submit %>
+
+<% end %>
