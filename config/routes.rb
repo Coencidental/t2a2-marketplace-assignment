@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'orders/:item_id/complete', to: 'orders#complete'
+  get 'orders/:item_id/cancel', to: 'orders#cancel'
+  get 'orders/:item_id', to: 'orders#new', as: 'new_order'
   get 'locations/new', to: 'locations#new', as: 'new_location'
   post 'locations/new', to: 'locations#create'
   resources :locations, only: [:show, :edit, :create, :update]

@@ -1,0 +1,20 @@
+<h1>Orders#new</h1>
+<p>Find me in app/views/orders/new.html.erb</p>
+
+<button id="checkout">Checkout</button>
+
+<script src="https://js.stripe.com/v3/"></script>
+
+<script>
+
+let stripe = Stripe("pk_test_c0TI4cPgJLVDD4T897AsSIgx00TOpefVjQ")
+
+function checkout() {
+stripe.redirectToCheckout({
+    sessionId: "<%= @session.id %>"
+})
+.then(result => alert(result))
+}
+
+document.getElementById("checkout").addEventListener('click', checkout)
+</script>
