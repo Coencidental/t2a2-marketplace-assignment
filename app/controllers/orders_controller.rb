@@ -20,6 +20,11 @@ class OrdersController < ApplicationController
   end
 
   def complete 
+    @item = Item.find(params[:item_id])
+    @item.sold = true
+    if @item.save
+      p @item
+    end
   end
 
   def cancel 
