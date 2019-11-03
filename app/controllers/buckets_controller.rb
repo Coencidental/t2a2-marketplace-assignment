@@ -17,7 +17,7 @@ class BucketsController < ApplicationController
       end
     end
 
-    @sortedusers.sort
+    @sortedusers = @sortedusers.sort
 
   end
 

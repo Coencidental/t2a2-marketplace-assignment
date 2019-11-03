@@ -1,17 +1,27 @@
-<ul>
+
+  <div class="conversation">
     <% @messages.each do |message| %>
-      <% if message.body %>
-        <li>
-          <h4><%= message.user.username %></h4>
-          <p><%= message.body %></p>
-        </li>
+      <% if message.user == current_user %>
+        <% if message.body %>
+          <div class="sentmessage">
+            <h4>You:</h4>
+            <p><%= message.body %></p>
+          </div>
+        <% end %>
+      <% else %>
+        <% if message.body %>
+          <div class="receivedmessage">
+            <h4><%= message.user.username %></h4>
+            <p><%= message.body %></p>
+          </div>
+        <% end %>
       <% end %>
     <% end %>
-  </ul>
+  </div>
   
   <%= form_for [@conversation, @message] do |f| %>
-    <div class="field">
-      <%= f.text_area :body, placeholder: "Your message" %>
+    <div class="field yourmessage">
+      <%= f.text_area :body, class: "messagebox", placeholder: "Your message" %>
     </div>
   
     <%= f.submit "Send" %>

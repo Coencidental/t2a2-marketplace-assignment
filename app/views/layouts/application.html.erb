@@ -15,14 +15,18 @@
 
   <body>
     <% if current_user %>
-      <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-      <%= link_to 'All buckets', buckets_path %>
-      <%= link_to 'Your buckets', user_buckets_path %>
-      <%= link_to 'Your inbox', conversations_path %>
-      <%= link_to 'Your profile', user_profile_path(current_user) %>
+    <div class="navbar">
+      <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "button is-link navlink" %>
+      <%= link_to 'All buckets', buckets_path, class: "button is-link navlink" %>
+      <%= link_to 'Your buckets', user_buckets_path, class: "button is-link navlink" %>
+      <%= link_to 'Your inbox', conversations_path, class: "button is-link navlink" %>
+      <%= link_to 'Your profile', user_profile_path(current_user), class: "button is-link navlink" %>
+    </div>
     <% else %>
-      <%= link_to 'Sign up', new_user_registration_path %>
-      <%= link_to 'Sign in', new_user_session_path %>
+    <div class="navbar">
+      <%= link_to 'Sign up', new_user_registration_path, class: "button navlink" %>
+      <%= link_to 'Sign in', new_user_session_path, class: "button navlink" %>
+    </div>
     <% end %>
       
     <%= render 'layouts/alerts' %>
