@@ -3,7 +3,7 @@
     <% @messages.each do |message| %>
       <% if message.user == current_user %>
         <% if message.body %>
-          <div class="sentmessage">
+          <div class="sentmessage container is-info">
             <h4>You:</h4>
             <p><%= message.body %></p>
           </div>

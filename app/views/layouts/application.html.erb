@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pond</title>
+    <title>Streetlight</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -17,8 +17,8 @@
     <% if current_user %>
     <div class="navbar">
       <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "button is-link navlink" %>
-      <%= link_to 'All buckets', buckets_path, class: "button is-link navlink" %>
-      <%= link_to 'Your buckets', user_buckets_path, class: "button is-link navlink" %>
+      <%= link_to 'Browse', buckets_path, class: "button is-link navlink" %>
+      <%= link_to 'Your items', user_buckets_path, class: "button is-link navlink" %>
       <%= link_to 'Your inbox', conversations_path, class: "button is-link navlink" %>
       <%= link_to 'Your profile', user_profile_path(current_user), class: "button is-link navlink" %>
     </div>

@@ -7,7 +7,7 @@
 <% @sortedusers.each do |user| %>
 
 <p>User: <%= user[1].user.username %></p>
-<p><%= user[0].round(2) %> kilometers away</p>
+
 
 <% end %>
 
@@ -16,30 +16,30 @@
 </div>
 
 
-<table>
-    <tr>
-      <th>Name</th>
-      <th>User</th>
-      <th>Description</th>
-    </tr>
-    
-    <% @sortedusers.each do |user| %>
 
+
+<div class="allbuckets">
+  <% @sortedusers.each do |user| %>
     <% user[1].user.buckets.each do |bucket| %>
-    <tr>
-      <td><p><%= link_to bucket.name, bucket_path(bucket) %></p></td>
-      <td><%= link_to bucket.user.username, user_profile_path(bucket.user) %></td>
-      <td><p><%= bucket.description %></p></td>
-    </tr>
-    <% if bucket.user == current_user %>
-    <tr>
-      <td><%= link_to "Delete this bucket", bucket_destroy_path(bucket), :data => {:confirm => 'Are you sure?  This will delete any items in the bucket too.'} %></td>
-      <td><%= link_to "Edit this bucket", edit_bucket_path(bucket) %></td>
-    </tr>
+      <div class="bucketcard">
+        <div>
+        <p>Name: <%= link_to bucket.name, bucket_path(bucket) %></p>
+        <p>User: <%= link_to bucket.user.username, user_profile_path(bucket.user) %></p>
+        <p><%= user[0].round(2) %> kilometers away</p>
+        </div>
+        <div>
+        <p>Description: <%= bucket.description %></p>
+        </div>
+      </div>
+      <% if bucket.user == current_user %>
+      <div class="bucketcard">
+        <p><%= link_to "Delete this bucket", bucket_destroy_path(bucket), :data => {:confirm => 'Are you sure?  This will delete any items in the bucket too.'} %></p>
+        <p><%= link_to "Edit this bucket", edit_bucket_path(bucket) %></p>
+      </div>
+      <% end %>
     <% end %>
-    <% end %>
-    <% end %>
-  </table>
+  <% end %>
+</div>
 
   <script>
 
@@ -61,10 +61,11 @@
       var map = new google.maps.Map(document.getElementById('map'), mapOptions);
       
       for (var i = 0; i < places.length; i++) {
-          locations.push({lat: places[i].latitude, lng: places[i].longitude, id: (places[i].id - 1)}),
-          people.push({user: users[i], id: users[i].id})
+          locations.push({lat: places[i].latitude, lng: places[i].longitude, id: (places[i].user_id - 1)}),
+          // console.log({lat: places[i].latitude, lng: places[i].longitude, id: (places[i].user_id)}),
+          people.push({user: users[i], location_id: places[i]})
       }
-      
+      console.log(locations)
     
     
       var markers = locations.map(function(location, i) {
@@ -97,9 +98,11 @@
         position: { lat: place.lat, lng: place.lng},
         map: map,
         icon: "https://upload.wikimedia.org/wikipedia/commons/c/ca/1x1.png"
-      });
+      });  
+      console.log(place)
       var infowindow = new google.maps.InfoWindow({
-        content: "<em>" + people[place.id].user.email + "</em>"
+        
+        content: "<a href='http://localhost:3000/users/" + users[place.id].id + "'><em>" + people[place.id].user.username + "</em></a>"
       });
     
       var circle = new google.maps.Circle({
