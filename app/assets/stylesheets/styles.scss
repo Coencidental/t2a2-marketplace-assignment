@@ -33,27 +33,7 @@
   transition: 1s;
 }
 
-.newsession {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  justify-items: center;
-  margin: auto;
 
-  align-items: center;
-
-  height: 100vh;
-  padding: 0 0 15rem 0;
-}
-
-.helplinks {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 50vw;
-  .button {
-  }
-}
 
 .bucketcard {
   width: 80vw;
@@ -71,6 +51,20 @@
     justify-content: center;
     padding: 1rem 1rem;
   }
+}
+
+.bodycontent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  background-color: lightgrey;
+  padding: 1rem 0;
 }
 
 //  .navbar {

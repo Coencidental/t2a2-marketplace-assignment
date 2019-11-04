@@ -8,13 +8,19 @@
 
 <p>User: <%= user[1].user.username %></p>
 
-
 <% end %>
 
 <div id="map">
 
 </div>
 
+
+<div class="search">
+  <%= form_tag(buckets_path method: :get) do %>
+    Item <%= text_field_tag :bucket %>
+    <%= submit_tag 'Search' %>
+  <% end %>
+</div>
 
 
 

@@ -3,22 +3,23 @@
     <% @messages.each do |message| %>
       <% if message.user == current_user %>
         <% if message.body %>
-          <div class="sentmessage container is-info">
+          <div class="sentmessage">
             <h4>You:</h4>
-            <p><%= message.body %></p>
+            <p><%= message.body + " - Sent: " + message.message_time %></p>
           </div>
         <% end %>
       <% else %>
         <% if message.body %>
           <div class="receivedmessage">
             <h4><%= message.user.username %></h4>
-            <p><%= message.body %></p>
+            <p><%= message.body + " - Sent: " + message.message_time %></p>
           </div>
         <% end %>
       <% end %>
     <% end %>
   </div>
   
+ 
   <%= form_for [@conversation, @message] do |f| %>
     <div class="field yourmessage">
       <%= f.text_area :body, class: "messagebox", placeholder: "Your message" %>

@@ -1,3 +1,41 @@
 // Place all the styles related to the messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.conversation {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(194, 194, 194);
+  padding: 0.5rem;
+
+  div {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.sentmessage {
+  background-color: rgb(109, 204, 109);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.receivedmessage {
+  background-color: lightblue;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.yourmessage {
+  padding: 0.5rem;
+
+  input {
+    width: 50%;
+  }
+
+  .messagebox {
+    width: 80%;
+    height: 3rem;
+    text-align: center;
+    border-radius: 0.5rem;
+  }
+}

@@ -1,0 +1,50 @@
+.signup {
+  width: fit-content;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+
+  border: 1px solid red;
+
+  input {
+    display: inline-block;
+    border: 1px solid black;
+    margin: 0 auto;
+    padding: 0.25rem 1rem;
+  }
+
+  label {
+    display: inline-block;
+    border: 1px solid blue;
+    margin: 0 auto;
+  }
+}
+
+.newsession {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  margin: auto;
+
+  align-items: center;
+
+  padding: 0 0 15rem 0;
+}
+
+.helplinks {
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 50vw;
+  .button {
+    background-color: rgb(0, 149, 199);
+
+    &:hover {
+      background-color: lightblue;
+    }
+  }
+}

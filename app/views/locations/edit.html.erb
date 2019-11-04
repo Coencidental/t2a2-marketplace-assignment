@@ -1,8 +1,38 @@
+
+
 <h1>What is your home browsing location?</h1>
 
 <%= form_with model: @location, local: true do |f| %>
 
-<%= f.text_area :address %>
+<%= f.text_area :address, id: "pac-input" %>
 <%= f.submit %>
 
 <% end %>
+
+<!-- 
+<script>
+
+function autocomplete(input) {
+  
+  var autocomplete = new google.maps.places.Autocomplete(input);
+
+  autocomplete.addListener('place_changed', function() {
+          var place = autocomplete.getPlace();
+          if (!place.geometry) {
+            window.alert("No details available for input: '" + place.name + "'");
+            return;
+          }
+  })
+}
+
+var input = document.getElementById('pac-input');
+document.addEventListener("DOMContentLoaded", function(){
+    autocomplete(input);
+})
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.google_maps_api_key %>>&libraries=places"
+        async defer></script> -->
+
+
