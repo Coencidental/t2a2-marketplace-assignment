@@ -7,9 +7,10 @@
 
 <script>
 
-let stripe = Stripe("pk_test_c0TI4cPgJLVDD4T897AsSIgx00TOpefVjQ")
+
 
 function checkout() {
+    let stripe = Stripe("pk_test_c0TI4cPgJLVDD4T897AsSIgx00TOpefVjQ")
 stripe.redirectToCheckout({
     sessionId: "<%= @session.id %>"
 })

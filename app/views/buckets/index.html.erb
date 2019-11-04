@@ -2,22 +2,16 @@
     <meta name='turbolinks-visit-control' content='reload'>
 <% end %>
 
-<p>Users ordered by proximity:</p>
 
-<% @sortedusers.each do |user| %>
-
-<p>User: <%= user[1].user.username %></p>
-
-<% end %>
-
+<% if !@allitems %>
 <div id="map">
-
 </div>
+<% end %>
 
 
 <div class="search">
-  <%= form_tag(buckets_path method: :get) do %>
-    Item <%= text_field_tag :bucket %>
+  <%= form_tag(buckets_path, method: :get) do %>
+    <%= text_field_tag :search, params[:search] %>
     <%= submit_tag 'Search' %>
   <% end %>
 </div>
@@ -25,23 +19,46 @@
 
 
 <div class="allbuckets">
-  <% @sortedusers.each do |user| %>
-    <% user[1].user.buckets.each do |bucket| %>
+
+  <% if @allitems %>
+
+    <% @allitems.each do |item| %>
       <div class="bucketcard">
         <div>
-        <p>Name: <%= link_to bucket.name, bucket_path(bucket) %></p>
-        <p>User: <%= link_to bucket.user.username, user_profile_path(bucket.user) %></p>
-        <p><%= user[0].round(2) %> kilometers away</p>
+        <p>Name: <%= link_to item.name, bucket_item_path(item, item.id, item.bucket.id) %></p>
+        <p>User: <%= link_to item.bucket.user.username, user_profile_path(item.bucket.user) %></p>
         </div>
         <div>
-        <p>Description: <%= bucket.description %></p>
+        <p>Description: <%= item.description %></p>
         </div>
       </div>
-      <% if bucket.user == current_user %>
-      <div class="bucketcard">
-        <p><%= link_to "Delete this bucket", bucket_destroy_path(bucket), :data => {:confirm => 'Are you sure?  This will delete any items in the bucket too.'} %></p>
-        <p><%= link_to "Edit this bucket", edit_bucket_path(bucket) %></p>
-      </div>
+    <% end %>
+    
+  <% else %>
+
+    <% @sortedusers.each do |user| %>
+      <% user[1].user.buckets.each do |bucket| %>
+        <div class="bucketcard">
+
+          <div>
+            <p>Name: <%= link_to bucket.name, bucket_path(bucket) %></p>
+            <p>User: <%= link_to bucket.user.username, user_profile_path(bucket.user) %></p>
+            <p><%= user[0].round(2) %> kilometers away</p>
+          </div>
+
+          <div>
+          <p>Description: <%= bucket.description %></p>
+          </div>
+
+        </div>
+
+        <% if bucket.user == current_user %>
+          <div class="bucketcard">
+            <p><%= link_to "Delete this bucket", bucket_destroy_path(bucket), :data => {:confirm => 'Are you sure?  This will delete any items in the bucket too.'} %></p>
+            <p><%= link_to "Edit this bucket", edit_bucket_path(bucket) %></p>
+          </div>
+        <% end %>
+
       <% end %>
     <% end %>
   <% end %>

@@ -7,8 +7,11 @@ class BucketsController < ApplicationController
   def index
     if params[:search]
       @items = Item.where('name LIKE ?', "%#{params[:search]}%")
-      @buckets = []
-      
+      @allitems = []
+      @items.each do |item|
+        @allitems << item
+      end 
+      @buckets = @allitems.uniq
     else
       @buckets = Bucket.all.order(user_id: :desc)
       @location = current_user.location
