@@ -5,5 +5,10 @@
 <p>Brand: <%= @item.brand %></p>
 <p>Returns policy: <%= @item.returnable %></p>
 
+<% if @item.tagwords.count >= 1 %>
+  <p>Tagwords:</p>
+  <% @item.tagwords.each do |tag| %>
+    <%= tag.tag %>
+  <% end %>
+<% end %>
 <p><%= image_tag @item.image, width: 500 if @item.image.attached? %></p>
-
