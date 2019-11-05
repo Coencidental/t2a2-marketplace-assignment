@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @tagword = Tagword.new
   end
 
   def new

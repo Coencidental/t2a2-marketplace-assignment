@@ -8,7 +8,17 @@
 <% if @item.tagwords.count >= 1 %>
   <p>Tagwords:</p>
   <% @item.tagwords.each do |tag| %>
-    <%= tag.tag %>
+    <%= tag.tag %> <%= link_to "(x)", tagword_remove_path(@item, tag) %>
   <% end %>
 <% end %>
+
+
+
+<%= form_with scope: :tagword, method: 'post', controller: 'tagwords', action: 'create', local: true do |f| %>
+
+  <%= f.text_field :tag, placeholder: "New Tagword" %>
+  <%= f.submit %>
+
+<% end %>
+
 <p><%= image_tag @item.image, width: 500 if @item.image.attached? %></p>

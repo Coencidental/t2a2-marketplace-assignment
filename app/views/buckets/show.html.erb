@@ -3,14 +3,6 @@
 <p><%= @bucket.description %></p>
 
 <% if @bucket.items.count > 0 %>
-  <table>
-    <tr>
-      <th>Item name</th>
-      <th>Brand</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Returns Policy</th>
-    </tr>
   <% @bucket.items.each do |item| %>
     <% if item.sold == false %>
 
@@ -28,18 +20,9 @@
         <p><%= item.description %></p>
         <p><%= item.returnable %></p>
       </div>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
     </div>
     <% end %>
   <% end%>
-  </table>
   <%= link_to "Add an item", new_bucket_item_path(@bucket) %>
   <% else %>
 
