@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_03_123834) do
+ActiveRecord::Schema.define(version: 2019_11_05_053002) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,15 @@ ActiveRecord::Schema.define(version: 2019_11_03_123834) do
     t.integer "receiver_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "item_tagwords", force: :cascade do |t|
+    t.bigint "item_id"
+    t.bigint "tagword_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_item_tagwords_on_item_id"
+    t.index ["tagword_id"], name: "index_item_tagwords_on_tagword_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -96,6 +105,12 @@ ActiveRecord::Schema.define(version: 2019_11_03_123834) do
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
   end
 
+  create_table "tagwords", force: :cascade do |t|
+    t.string "tag"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -119,6 +134,8 @@ ActiveRecord::Schema.define(version: 2019_11_03_123834) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "buckets", "users"
+  add_foreign_key "item_tagwords", "items"
+  add_foreign_key "item_tagwords", "tagwords"
   add_foreign_key "items", "buckets"
   add_foreign_key "locations", "users"
   add_foreign_key "messages", "conversations"
