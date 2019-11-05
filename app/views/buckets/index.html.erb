@@ -2,6 +2,13 @@
     <meta name='turbolinks-visit-control' content='reload'>
 <% end %>
 
+<% if params[:search] == nil %>
+<div class="bucketsinfo">
+  <p>Hey look down there, it's you, <%= current_user.username %>!  Though, maybe you should zoom out to find out some products!</p>
+</div>
+<% end %>
+
+
 
 <% if !@allitems %>
 <div id="map">
@@ -12,7 +19,7 @@
 <div class="search">
   <%= form_tag(buckets_path, method: :get) do %>
     <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag 'Search' %>
+    <%= submit_tag 'Search products' %>
   <% end %>
 </div>
 

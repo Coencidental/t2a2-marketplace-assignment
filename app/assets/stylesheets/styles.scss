@@ -7,6 +7,7 @@
    box-sizing: border-box;
    color: black;
    scroll-behavior: smooth;
+   transition-duration: 0.25s;
  }
 
  
@@ -14,9 +15,10 @@
 
 .navbar {
   background-image: url('pattern.svg');
+  background-position: center;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   padding: 0.5rem 1rem;
 
   div {
@@ -84,14 +86,7 @@
   padding: 1rem 0;
 }
 
-.search {
-  margin-bottom: 1rem; 
 
-  input {
-    padding: 0.5rem 3rem;
-    text-align: center;
-  }
-}
 
 .homepage_links {
   .button.is-link {

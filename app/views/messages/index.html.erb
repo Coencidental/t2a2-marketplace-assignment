@@ -4,14 +4,14 @@
       <% if message.user == current_user %>
         <% if message.body %>
           <div class="sentmessage">
-            <h4>You:</h4>
+              <em><h4>You:</h4></em>
             <p><%= message.body + " - Sent: " + message.message_time %></p>
           </div>
         <% end %>
       <% else %>
         <% if message.body %>
           <div class="receivedmessage">
-            <h4><%= message.user.username %></h4>
+            <h4><em><%= message.user.username %>:</em></h4>
             <p><%= message.body + " - Sent: " + message.message_time %></p>
           </div>
         <% end %>
