@@ -1,15 +1,16 @@
 <h1>Your Conversations</h1>
 
-<ul>
+
+<div class="conversations">
   <% @conversations.each do |conversation| %>
-    <li>
+    <div class="contactcard">
       <%= link_to conversation.recipient(current_user).username, conversation_messages_path(conversation) %>
       <% if !conversation.unread_message_count(current_user).zero? %>
         (<%= conversation.unread_message_count(current_user) %>)
       <% end %>
-    </li>
+    </div>
   <% end %>
-</ul>
+</div>
 
 <h2>All Available Streetlight Users</h2>
 <ul>

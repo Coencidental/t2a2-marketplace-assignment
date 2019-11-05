@@ -24,7 +24,7 @@
       <div class="navbox special">
       <%= link_to 'Your items', user_buckets_path, class: "button is-link navlink" %>
 
-       <div class="navbar_logo"></div>
+       <div class="navbar_logo"><span class="logosvg"><%= image_tag("logo.svg") %></span></div>
 
       <% if @unreadmessages == true %>
         <%= link_to 'Your inbox', conversations_path, class: "button is-link navlink redbox" %>

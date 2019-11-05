@@ -23,18 +23,24 @@
 
   .special { 
     .navbar_logo {
-      background-image: url(https://image.flaticon.com/icons/svg/148/148825.svg);
+      .logosvg {
+
+        width: 50%;
+        margin: 1rem auto;
+
+      }
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
       max-height: 0;
+      overflow: hidden;
     } 
   }
 
   &:hover {
     .special { 
       .navbar_logo {
-        padding: 2rem 0;
+        padding: 2.25rem 0;
       } 
     }
   }
@@ -111,8 +117,6 @@
   background-color: lightgrey;
   padding: 1rem 0;
 }
-
-
 
 .homepage_links {
   .button.is-link {
