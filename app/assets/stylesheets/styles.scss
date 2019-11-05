@@ -6,6 +6,7 @@
    padding: none;
    box-sizing: border-box;
    color: black;
+   scroll-behavior: smooth;
  }
 
  
@@ -18,16 +19,26 @@
   justify-content: space-evenly;
   padding: 0.5rem 1rem;
 
-  .button.is-link {
-    width: 20%;
-    font-size: 1rem;
-    padding: 0 0.1rem;
-    border: 0.1rem solid rgb(230, 230, 230);
-    border-radius: 0.1rem;
-  }
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-  .button.is-link.redbox {
-    background-color: red;
+    .button.is-link {
+      width: auto;
+      font-size: 1rem;
+      border: 0.1rem solid rgb(230, 230, 230);
+      border-radius: 0.25rem;
+      padding: 0.25rem;
+
+      &:last-of-type {
+        border-top: none;
+      }
+    }
+  
+    .button.is-link.redbox {
+      background-color: red;
+    }
   }
 }
 
@@ -48,8 +59,8 @@
   flex-direction: row;
   justify-content: center;
   margin-bottom: 1rem;
-  border: 0.5rem solid $parchment;
-  border-radius: 0.5rem;
+  border: 0.25rem solid $parchment;
+  border-radius: 0.25rem;
 
   div {
     width: 50%;
@@ -74,13 +85,20 @@
 }
 
 .search {
+  margin-bottom: 1rem; 
+
   input {
     padding: 0.5rem 3rem;
     text-align: center;
   }
 }
 
-
+.homepage_links {
+  .button.is-link {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+}
 
 //  .navbar {
 //   display: flex;

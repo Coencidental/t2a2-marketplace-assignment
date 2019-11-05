@@ -1,6 +1,7 @@
-<h1>Welcome, <%= current_user.username %>!</h1>
+<h1>Welcome to Streetlight.  I am genie.  You are <%= current_user.username %>.</h1>
 
 <div class="homepage_links">
-<%= link_to "Go to the item buckets page", buckets_path %>
-<%= link_to "Go to your inbox", conversations_path %>
+<%= link_to "Browse current item buckets", buckets_path, class: "button is-link" %>
+<%= link_to "View your conversations", conversations_path, class: "button is-link" %>
+<%= link_to "Create a new bucket of your own", new_bucket_path, class: "button is-link" %>
 </div>

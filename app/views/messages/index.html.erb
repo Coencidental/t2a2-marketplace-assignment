@@ -1,5 +1,5 @@
 
-  <div class="conversation">
+  <div class="conversation", id="conv">
     <% @messages.each do |message| %>
       <% if message.user == current_user %>
         <% if message.body %>
@@ -30,3 +30,9 @@
 
 <p><%= link_to "Back to inbox", conversations_path %></p>
 <p>Visit their profile: <%= link_to @conversation.recipient(current_user).username, user_profile_path(@conversation.recipient(current_user)) %></p>
+
+<script>
+  var myDiv = document.getElementById("conv");
+  2
+  myDiv.scrollTop = myDiv.scrollHeight;
+</script>

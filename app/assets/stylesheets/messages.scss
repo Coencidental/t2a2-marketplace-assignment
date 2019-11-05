@@ -7,9 +7,15 @@
   flex-direction: column;
   background-color: rgb(194, 194, 194);
   padding: 0.5rem;
-
+  max-height: 60vh;
+  overflow-y: scroll;
   div {
     margin-bottom: 0.5rem;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
   }
 }
 

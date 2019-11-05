@@ -16,19 +16,24 @@
   <body>
     <% if current_user %>
     <div class="navbar">
-      <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "button is-link navlink" %>
-      <%= link_to 'Browse', buckets_path, class: "button is-link navlink" %>
-      <%= link_to 'Your items', user_buckets_path, class: "button is-link navlink" %>
+      <div class="navbox">
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "button is-link navlink" %>
+        <%= link_to 'Browse', buckets_path, class: "button is-link navlink" %>
+      </div>
 
+      <div class="navbox">
+      <%= link_to 'Your items', user_buckets_path, class: "button is-link navlink" %>
       <% if @unreadmessages == true %>
         <%= link_to 'Your inbox', conversations_path, class: "button is-link navlink redbox" %>
-    <% elsif @unreadmessages == false %>
+      <% elsif @unreadmessages == false %>
         <%= link_to 'Your inbox', conversations_path, class: "button is-link navlink" %>
       <% end %>
+      </div>
 
-
-
+      <div class="navbox">
       <%= link_to 'Your profile', user_profile_path(current_user), class: "button is-link navlink" %>
+      <%= link_to 'Home', root_path, class: "button is-link navlink" %>
+      </div>
     </div>
     <% else %>
     <div class="navbar">
