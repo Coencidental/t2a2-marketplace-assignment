@@ -21,8 +21,11 @@
         <%= link_to 'Browse', buckets_path, class: "button is-link navlink" %>
       </div>
 
-      <div class="navbox">
+      <div class="navbox special">
       <%= link_to 'Your items', user_buckets_path, class: "button is-link navlink" %>
+
+       <div class="navbar_logo"></div>
+
       <% if @unreadmessages == true %>
         <%= link_to 'Your inbox', conversations_path, class: "button is-link navlink redbox" %>
       <% elsif @unreadmessages == false %>

@@ -21,6 +21,24 @@
   justify-content: space-around;
   padding: 0.5rem 1rem;
 
+  .special { 
+    .navbar_logo {
+      background-image: url(https://image.flaticon.com/icons/svg/148/148825.svg);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      max-height: 0;
+    } 
+  }
+
+  &:hover {
+    .special { 
+      .navbar_logo {
+        padding: 2rem 0;
+      } 
+    }
+  }
+
   div {
     display: flex;
     flex-direction: column;
