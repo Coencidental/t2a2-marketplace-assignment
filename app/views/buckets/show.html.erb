@@ -3,7 +3,6 @@
 <p><%= @bucket.description %></p>
 
 <% if @bucket.items.count > 0 %>
-
   <table>
     <tr>
       <th>Item name</th>
@@ -14,15 +13,30 @@
     </tr>
   <% @bucket.items.each do |item| %>
     <% if item.sold == false %>
-    <tr>
-      <td><%= link_to item.name, bucket_item_path(@bucket, item.id) %></td>
-      <td><%= item.brand %></td>
-      <td><%= item.description %></td>
-      <td><%= item.price %></td>
-      <td><%= item.returnable %></td>
-      <td><%= link_to "Delete this item", bucket_item_destroy_path(@bucket.id, item), data: {confirm: 'Are you sure you want to delete this item?'} %></td>
-    </tr>
 
+    <div class="card">
+      <div>
+        <p><%= link_to item.name, bucket_item_path(@bucket, item.id) %></p>
+        <p><%= item.brand %></p>
+        <p><%= number_to_currency(item.price) %></p>
+        <% if (item.bucket.user == current_user) %>
+        <p><%= link_to "Delete this item", bucket_item_destroy_path(@bucket.id, item), data: {confirm: 'Are you sure you want to delete this item?'} %></p>
+        <p><%= link_to "Edit this item", edit_bucket_item_path(@bucket.id, item) %></p>
+        <% end %>
+      </div>
+      <div>
+        <p><%= item.description %></p>
+        <p><%= item.returnable %></p>
+      </div>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </div>
     <% end %>
   <% end%>
   </table>

@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :params_item, only: [:show, :edit]
   before_action :authenticate_user!
-
+  before_action :ensure_user, only: :edit
   def index
     @items = Item.all
   end
@@ -27,11 +27,13 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    
   end
 
   def update 
+    @item = Item.find_by(item_params[:item_id])
     if @item.update(item_params)
-      redirect_to @item
+      redirect_to bucket_item_path(@item.bucket, @item)
     else
       flash[:alert] = "Could not update item!"
       render :edit
@@ -55,7 +57,13 @@ class ItemsController < ApplicationController
   end
 
   # Paramater sanitization
-  
+  def ensure_user
+    if Item.find(params[:id]).bucket.user != current_user
+      flash[:alert] = "You are not authorized to view this page!"
+      redirect_to root_path
+    end
+  end
+
   def item_params
     params.require(:item).permit(:name, :brand, :description, :returnable, :price, :image)
   end

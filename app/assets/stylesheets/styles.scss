@@ -39,7 +39,7 @@
     }
   
     .button.is-link.redbox {
-      background-color: red;
+      background-color: rgb(255, 136, 136);
     }
   }
 }
@@ -59,16 +59,24 @@
   margin: 0 auto;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   margin-bottom: 1rem;
   border: 0.25rem solid $parchment;
   border-radius: 0.25rem;
 
   div {
-    width: 50%;
+    width: auto;
     text-align: center;
     justify-content: center;
     padding: 1rem 1rem;
+    background-color: rgb(173, 173, 173);
+    
+
+    p {
+      background-color: rgb(92, 92, 92);
+      color: white;
+      padding: 0.25rem;
+    }
   }
 }
 
