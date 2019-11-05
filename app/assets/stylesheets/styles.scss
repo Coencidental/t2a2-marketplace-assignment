@@ -8,6 +8,9 @@
    color: black;
  }
 
+ 
+
+
 .navbar {
   background-image: url('pattern.svg');
   display: flex;
@@ -22,13 +25,16 @@
     border: 0.1rem solid rgb(230, 230, 230);
     border-radius: 0.1rem;
   }
+
+  .button.is-link.redbox {
+    background-color: red;
+  }
 }
 
 #map {
   width: 80vw;
   height: 50vh;
   margin: 2rem auto;
-  box-shadow: 0 0 5rem rgb(70, 70, 70);
   border-radius: 1.5rem;
   transition: 1s;
 }
@@ -65,6 +71,13 @@
   font-size: 3rem;
   background-color: lightgrey;
   padding: 1rem 0;
+}
+
+.search {
+  input {
+    padding: 0.5rem 3rem;
+    text-align: center;
+  }
 }
 
 

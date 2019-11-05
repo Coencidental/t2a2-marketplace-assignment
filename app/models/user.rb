@@ -8,13 +8,10 @@ class User < ApplicationRecord
   validates_uniqueness_of :username
   validates_uniqueness_of :email
   has_one :location, dependent: :destroy
+  has_many :conversations
 
   def assign_default_role
     add_role(:user)
-  end
-  
-  def proximity_from(user) 
-    
   end
 
   devise :database_authenticatable, :registerable,

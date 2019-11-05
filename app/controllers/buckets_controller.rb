@@ -5,27 +5,36 @@ class BucketsController < ApplicationController
   require 'geocoder'
 
   def index
-    if params[:search]
-      @items = Item.where('name LIKE ?', "%#{params[:search]}%")
-      @allitems = []
-      @items.each do |item|
-        @allitems << item
-      end 
-      @buckets = @allitems.uniq
-    else
-      @buckets = Bucket.all.order(user_id: :desc)
-      @location = current_user.location
-      @locations = Location.all
-      @users = User.all
-      @sortedusers = []
+    @location = current_user.location
+    @locations = Location.all
 
-      @locations.each do |location|
+    @users = User.all
+    @sortedusers = []
+    @locations.each do |location|
         unless location === @location
         @sortedusers << [location.distance_to(@location), location]
         end
       end
 
-      @sortedusers = @sortedusers.sort
+    @sortedusers = @sortedusers.sort
+
+    if params[:search] != nil
+      @items = Item.where('name LIKE ?', ("%#{params[:search]}%" || "%#{params[:search].upcase}%" || "%#{params[:search].downcase}%" || "%#{params[:search].capitalize}%"))
+      @allitems = []
+      @items.each do |item|
+        @allitems << item
+      end 
+      @buckets = []
+      @allitems.each do |item|
+        @buckets << item.bucket
+      end
+      @buckets = @buckets.uniq
+
+      if @buckets == nil 
+        flash[:alert] = "Could not find any matching items!"
+      end
+    else
+      @buckets = Bucket.all.order(user_id: :desc)
     end
   end
 

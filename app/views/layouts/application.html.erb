@@ -19,7 +19,15 @@
       <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "button is-link navlink" %>
       <%= link_to 'Browse', buckets_path, class: "button is-link navlink" %>
       <%= link_to 'Your items', user_buckets_path, class: "button is-link navlink" %>
-      <%= link_to 'Your inbox', conversations_path, class: "button is-link navlink" %>
+
+      <% if @unreadmessages == true %>
+        <%= link_to 'Your inbox', conversations_path, class: "button is-link navlink redbox" %>
+    <% elsif @unreadmessages == false %>
+        <%= link_to 'Your inbox', conversations_path, class: "button is-link navlink" %>
+      <% end %>
+
+
+
       <%= link_to 'Your profile', user_profile_path(current_user), class: "button is-link navlink" %>
     </div>
     <% else %>
