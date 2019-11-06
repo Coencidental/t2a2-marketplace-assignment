@@ -1,24 +1,30 @@
-<h1><%= @item.name %></h1>
+<div class="item_card">
+  <h1><%= @item.name %></h1>
 
-<p>Description: <%= @item.description %></p>
-<p>Price: <%= link_to (number_to_currency @item.price), new_order_path(@item) %></p>
-<p>Brand: <%= @item.brand %></p>
-<p>Returns policy: <%= @item.returnable %></p>
+  <p>Description: <%= @item.description %></p>
+  <p>Price: <%= link_to (number_to_currency @item.price), new_order_path(@item) %></p>
+  <p>Brand: <%= @item.brand %></p>
+  <p>Returns policy: <%= @item.returnable %></p>
+</div>
 
 <% if @item.tagwords.count >= 1 %>
-  <p>Tagwords:</p>
-  <% @item.tagwords.each do |tag| %>
-    <%= tag.tag %> <%= link_to "(x)", tagword_remove_path(@item, tag) %>
+  <div class="tagwords">
+    <p>Tagwords:</p>
+    <div>
+      <% @item.tagwords.each do |tag| %>
+        <%= tag.tag %><%= current_user == @item.bucket.user ? (link_to "(x)", tagword_remove_path(@item.bucket, @item, tag)) : '' %><%= ", " %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<div class="tagword_new">
+  <%= form_with scope: :tagword, method: 'post', controller: 'tagwords', action: 'create', local: true do |f| %>
+
+    <%= f.text_field :tag, placeholder: "New Tagword" %>
+    <%= f.submit %>
+
   <% end %>
-<% end %>
+</div>
 
-
-
-<%= form_with scope: :tagword, method: 'post', controller: 'tagwords', action: 'create', local: true do |f| %>
-
-  <%= f.text_field :tag, placeholder: "New Tagword" %>
-  <%= f.submit %>
-
-<% end %>
-
-<p><%= image_tag @item.image, width: 500 if @item.image.attached? %></p>
+<span class="item_image"><%= image_tag @item.image, width: 500 if @item.image.attached? %></span>

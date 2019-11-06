@@ -12,9 +12,15 @@ class TagwordsController < ApplicationController
   end
 
   def remove
-    render json: params
     
-   
+    @item = Item.find(params[:item_id])
+    @tag = @item.tagwords.find(params[:tagword])
+    if @item.tagwords.delete(@tag)
+      flash[:alert] = "Successfully removed tagword" 
+    else
+      flash[:alert] = "Could not remove tagword"
+    end
+    redirect_to bucket_item_path(@item.bucket, @item)
   end
 
   private

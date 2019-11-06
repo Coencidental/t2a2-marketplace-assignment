@@ -18,18 +18,21 @@
       <% end %>
     <% end %>
   </div>
-  
- 
+
+<div class="profile_link">
+  <p>Visit their profile: <%= link_to @conversation.recipient(current_user).username, user_profile_path(@conversation.recipient(current_user)) %></p>
+</div>
+
+ <div class="usermessage">
   <%= form_for [@conversation, @message] do |f| %>
     <div class="field yourmessage">
       <%= f.text_area :body, class: "messagebox", placeholder: "Your message" %>
     </div>
-  
-    <%= f.submit "Send" %>
+    <%= f.submit "Send Message", class: 'button is-link'%>
   <% end %>
+</div>
+<p><%= link_to "Back to inbox", conversations_path, class: 'button is-link' %></p>
 
-<p><%= link_to "Back to inbox", conversations_path %></p>
-<p>Visit their profile: <%= link_to @conversation.recipient(current_user).username, user_profile_path(@conversation.recipient(current_user)) %></p>
 
 <script>
   var myDiv = document.getElementById("conv");

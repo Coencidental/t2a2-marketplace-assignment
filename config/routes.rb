@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'tagwords/:item_id/remove', to: 'tagwords#remove', as: 'tagword_remove'
   get 'orders/:item_id/complete', to: 'orders#complete'
   get 'orders/:item_id/cancel', to: 'orders#cancel'
   get 'orders/:item_id', to: 'orders#new', as: 'new_order'
@@ -7,6 +6,7 @@ Rails.application.routes.draw do
   post 'locations/new', to: 'locations#create'
   post 'buckets/:bucket_id/items/:item_id/edit', to: 'items#update'
   post 'buckets/:bucket_id/items/:item_id', to: 'tagwords#create'
+  get 'buckets/:bucket_id/items/:item_id/:tagword/remove', to: 'tagwords#remove', as: 'tagword_remove'
   resources :locations, only: [:show, :edit, :create, :update]
   root 'pages#index'
   get 'about', to: 'pages#about'

@@ -1,8 +1,10 @@
 <div class="bucket">
 
-<h1><%= @bucket.name %></h1>
+<div class="bucket_title">
+  <h1><%= @bucket.name %></h1>
+  <p><%= @bucket.description %></p>
+</div>
 
-<p><%= @bucket.description %></p>
 
 <% if @bucket.items.count > 0 %>
 
@@ -26,10 +28,10 @@
     </div>
     <% end %>
   <% end%>
-  <%= link_to "Add an item", new_bucket_item_path(@bucket) %>
+  <%= link_to "Add an item", new_bucket_item_path(@bucket), class: "button is-link" %>
   <% else %>
 </div>
-  <p><%= @bucket.name %> has no items yet!  <%= link_to "Add some now!", new_bucket_item_path(@bucket) %></p>
+  <p><%= @bucket.name %> has no items yet!  <%= link_to "Add some now!", new_bucket_item_path(@bucket), class: "button is-link" %></p>
 <% end %>
 
 

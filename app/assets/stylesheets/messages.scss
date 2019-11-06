@@ -1,11 +1,12 @@
 // Place all the styles related to the messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'colours';
 
 .conversation {
   display: flex;
   flex-direction: column;
-  background-color: rgb(194, 194, 194);
+  background-color: $streetlight;
   padding: 0.5rem;
   max-height: 60vh;
   overflow-y: scroll;
@@ -44,4 +45,19 @@
     text-align: center;
     border-radius: 0.5rem;
   }
+}
+
+.usermessage {
+  .button.is-link {
+    margin-bottom: 1rem;
+  }
+}
+
+.profile_link {
+  border: 0.25rem solid $coal;
+  width: 50vw;
+  margin: 0 auto;
+  padding: 0.25rem 0.5rem;
+  color: $parchment;
+  background-color: rgb(167, 167, 167);
 }
