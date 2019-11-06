@@ -1,12 +1,15 @@
+<div class="bucket">
+
 <h1><%= @bucket.name %></h1>
 
 <p><%= @bucket.description %></p>
 
 <% if @bucket.items.count > 0 %>
+
   <% @bucket.items.each do |item| %>
     <% if item.sold == false %>
 
-    <div class="card">
+    <div class="itemcard">
       <div>
         <p><%= link_to item.name, bucket_item_path(@bucket, item.id) %></p>
         <p><%= item.brand %></p>
@@ -25,7 +28,7 @@
   <% end%>
   <%= link_to "Add an item", new_bucket_item_path(@bucket) %>
   <% else %>
-
+</div>
   <p><%= @bucket.name %> has no items yet!  <%= link_to "Add some now!", new_bucket_item_path(@bucket) %></p>
 <% end %>
 

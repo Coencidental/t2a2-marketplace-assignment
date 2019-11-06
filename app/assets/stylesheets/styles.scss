@@ -10,9 +10,6 @@
    transition-duration: 0.25s;
  }
 
- 
-
-
 .navbar {
   background-image: url('pattern.svg');
   background-position: center;
@@ -122,6 +119,18 @@
   .button.is-link {
     font-size: 1rem;
     margin: 0.5rem 0;
+  }
+}
+
+.bucket {
+
+  background-color: grey;
+  .itemcard {
+    width: 75%;
+    margin: 0 auto;
+    background-color: lightgrey;
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
   }
 }
 
