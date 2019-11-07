@@ -4,10 +4,13 @@
 @import 'colours';
 
 .bucketsinfo {
-  border: 0.25rem solid $coal;
+  border: 0.25rem solid lightgrey;
   border-radius: 0.25rem;
-  width: 75%;
+  width: fit-content;
   margin: 0 auto;
+  background-color: $coal;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
 }
 
 .search {
@@ -28,4 +31,38 @@
   flex-direction: row;
   justify-content: space-around;
   background-color: rgb(185, 185, 185);
+}
+
+.user_buckets {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: $darknavy;
+  padding: 0.5rem;
+
+  .bucket_card {
+    width: 100%;
+    padding: 0.25rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: $coal;
+    border-radius: 0.25rem;
+    border: 0.25 rem solid lightgrey;
+    color: $parchment;
+
+    div {
+      align-content: center;
+      &:last-of-type {
+      }
+    }
+
+    .title {
+      font-size: 1rem;
+    }
+  }
+}
+
+.allbuckets {
 }

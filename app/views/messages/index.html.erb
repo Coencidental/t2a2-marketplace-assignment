@@ -19,9 +19,11 @@
     <% end %>
   </div>
 
+<a href="<%= user_profile_path(@conversation.recipient(current_user)) %>">
 <div class="profile_link">
-  <p>Visit their profile: <%= link_to @conversation.recipient(current_user).username, user_profile_path(@conversation.recipient(current_user)) %></p>
+  <p>Visit <%= @conversation.recipient(current_user).username %>'s profile </p>
 </div>
+</a>
 
  <div class="usermessage">
   <%= form_for [@conversation, @message] do |f| %>

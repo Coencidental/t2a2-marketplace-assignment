@@ -1,5 +1,5 @@
 
-
+<div class="profile_banner">
 <h1><%= @user.username %>'s Profile Page</h1>
 <% if current_user == @user %>
 
@@ -8,17 +8,22 @@
 <p><%= link_to "View your location page", location_path(@user.location) %></p>
 
 <% end %>
-
+</div>
 <div class="profile">
 
-<p>User: <%= @user.username %></p>
-<p>Joined Streetlight on: <%= @user.created_at %></p>
+<p>Username: <%= @user.username %></p>
+<p>Joined Streetlight on: <%= (@user.created_at).to_s.split(" ")[0] %></p>
+
+<div class="bucket_card">
+  <h2>All of <%= @user.username %>'s current buckets:</h2>
+</div>
 
 <div class="user_buckets">
+  
   <% @user.buckets.each do |bucket| %>
-  <div class="user_card">
+  <div class="bucket_card">
     <div>
-      <p><%= link_to bucket.name, bucket_path(bucket) %></p>
+      <p class="title"><%= link_to bucket.name, bucket_path(bucket) %></p>
     </div>
     <div>
       <p>"<%= bucket.description %>"</p>

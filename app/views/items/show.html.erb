@@ -1,6 +1,5 @@
-<div class="item_card">
+<div class="item">
   <h1><%= @item.name %></h1>
-
   <p>Description: <%= @item.description %></p>
   <p>Price: <%= link_to (number_to_currency @item.price), new_order_path(@item) %></p>
   <p>Brand: <%= @item.brand %></p>

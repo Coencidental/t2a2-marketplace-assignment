@@ -1,14 +1,16 @@
 <%= render 'shared/errors', object:@item %>
 
 <h1>Add an item to <%= @bucket.name %></h1>
-
+<div class="new_item">
 <%= form_with scope: @item, local: true do |f| %>
 
 <p><%= f.text_field :name, placeholder: "Enter a name" %></p>
 <p><%= f.text_field :brand, placeholder: "Enter a brand, or homemade/unknown" %></p>
 <p><%= f.text_area :description, placeholder: "Enter an item description" %></p>
-<p><%= f.text_area :returnable, placeholder: "Enter a returns policy (if you'd be open to having the item back, for example)" %></p>
+<p><%= f.text_area :returnable, placeholder: "Enter a returns policy (if you'd be open to having the item back, for example)", class: "returns" %></p>
+<p class="price">Price:</p>
 <p><%= f.number_field :price, step: :any %></p>
-<p><%= f.file_field :image %></p>
+<p class="file"><%= f.file_field :image %></p>
 <p><%= f.submit %></p>
 <% end %>
+</div>

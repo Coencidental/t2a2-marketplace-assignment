@@ -1,26 +1,26 @@
-<h1>Buckets#user</h1>
-<p>Find me in app/views/buckets/user.html.erb</p>
+<h1>All of your buckets</h1>
 
 <% if @buckets != nil %>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-  </tr>
-  
+<div class="user_buckets">
+ 
   <% @buckets.each do |bucket| %>
-  <tr>
-    <td><p><%= link_to bucket.name, bucket_path(bucket) %></p></td>
-    <td><p><%= bucket.description %></p></td>
-  </tr>
-  <tr>
-    <td><%= link_to "Delete this bucket", bucket_destroy_path(bucket), :data => {:confirm => 'Are you sure?  This will delete any items in the bucket too.'} %></td>
-    <td><%= link_to "Edit this bucket", edit_bucket_path(bucket) %></td>
-  </tr>
 
+  <div class="bucket_card">
+    <div>
+      <td><p><%= link_to bucket.name, bucket_path(bucket) %></p></td>
+      <td><p><%= bucket.description %></p></td>
+    </div>
+    <div>
+      <td><%= link_to "Delete this bucket", bucket_destroy_path(bucket), :data => {:confirm => 'Are you sure?  This will delete any items in the bucket too.'} %></td>
+      <td><%= link_to "Edit this bucket", edit_bucket_path(bucket) %></td>
+    </div>
+  </div>
   <% end %>
-</table>
+  
+
+</div>
 <% else %>
   <p>You have no buckets yet!</p>
 <% end %>
-<p><%= link_to "Create a new bucket!", new_bucket_path %></p>
+<p><%= link_to "Create a new bucket!", new_bucket_path, class: "button is-link" %></p>
+

@@ -8,6 +8,10 @@
    scroll-behavior: smooth;
    transition-duration: 0.25s;
 
+   &::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+   }
  }
 
 .navbar {
@@ -86,6 +90,7 @@
   margin-bottom: 1rem;
   border: 0.25rem solid $parchment;
   border-radius: 0.25rem;
+  background-color: $coal;
 
   div {
     width: auto;
@@ -108,6 +113,7 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  color: $lightblue;
 }
 
 .title {
@@ -118,9 +124,20 @@
 }
 
 .homepage_links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: $coal; 
+  margin: 1rem auto 10vh auto;
+  padding: 2rem 1rem;
+  width: 75%;
+  height: 100%;
+  border-radius: 0.25rem;
+
   .button.is-link {
     font-size: 1rem;
-    margin: 0.5rem 0;
+    margin: 0.25rem 0;
+    
   }
 }
 
@@ -138,6 +155,16 @@
 
 body {
   background-color: $darknavy;
+  height: fit-content;
+}
+
+*:link {
+}
+
+.item_thumbnail {
+  width: 50%;
+  padding: 0.25rem;
+  margin: auto;
 }
 
 @import '../../../node_modules/bulma/sass/utilities/_all.sass';

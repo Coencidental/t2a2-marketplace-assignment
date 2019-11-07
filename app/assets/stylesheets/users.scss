@@ -3,20 +3,33 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'colours';
 
-.user_buckets {
+.profile {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
-  background-color: $darknavy;
-  padding: 0.5rem;
+  color: $parchment;
+  margin-top: 1rem;
 
-  .user_card {
-    padding: 0.25rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    background-color: lightgrey;
+  div {
+    background-color: $coal;
     border-radius: 0.25rem;
+    margin: 0 auto 0.25rem auto;
+    width: 80%;
+
+    &:first-of-type {
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.profile_banner {
+  color: $parchment;
+}
+
+.bucket_card {
+  &:first-of-type {
+    padding: 0.5rem 1rem;
+    width: 50vw;
   }
 }

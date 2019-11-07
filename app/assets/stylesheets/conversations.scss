@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'colours';
+
 .conversations {
   display: flex;
   flex-direction: row;
@@ -11,7 +13,12 @@
 
 .contactcard {
   width: 50%;
-  border: 1px solid red;
+  padding: 0.5rem 1rem;
+  background-color: $streetlight;
   justify-content: center;
   margin: 0 auto;
+  display: flex;
+  font-style: none;
+  color: white;
+
 }

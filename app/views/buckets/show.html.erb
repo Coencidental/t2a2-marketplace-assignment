@@ -25,6 +25,9 @@
         <p><%= item.description %></p>
         <p><%= item.returnable %></p>
       </div>
+      <div class="item_thumbnail">
+        <span><%= image_tag item.image if item.image.attached? %></span>
+      </div>
     </div>
     <% end %>
   <% end%>
