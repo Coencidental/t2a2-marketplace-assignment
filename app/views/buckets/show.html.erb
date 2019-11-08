@@ -16,7 +16,7 @@
         <p><%= link_to item.name, bucket_item_path(@bucket, item.id) %></p>
         <p><%= item.brand %></p>
         <p><%= number_to_currency(item.price) %></p>
-        <% if (item.bucket.user == current_user) %>
+        <% if ((item.bucket.user == current_user) || (current_user.has_role?(:admin))) %>
         <p><%= link_to "Delete this item", bucket_item_destroy_path(@bucket.id, item), data: {confirm: 'Are you sure you want to delete this item?'} %></p>
         <p><%= link_to "Edit this item", edit_bucket_item_path(@bucket.id, item) %></p>
         <% end %>

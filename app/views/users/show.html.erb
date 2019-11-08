@@ -13,7 +13,7 @@
       <ul>
       <p>All of your sold items:</p>
       <% @sold.each do |item| %>
-      <li><%= link_to item.name, bucket_item_path(item) %></li>
+      <li><%= link_to item.name, bucket_item_path(item.bucket, item) %></li>
       </ul>
     <% end %>
     <% end %>

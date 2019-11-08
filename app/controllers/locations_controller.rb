@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-  
+  before_action :authorize_user, only: [:edit, :update]
   
   def show
     @location = current_user.location
@@ -31,6 +31,12 @@ class LocationsController < ApplicationController
 
   private
 
+  def authorize_user
+    if (Location.find(params[:id]).user != current_user) && (current_user.has_role?(:admin) == false)
+      flash[:alert] = "You are not authorized to view this page!"
+      redirect_to root_path
+    end
+  end
 
   def location_params
     params.require(:location).permit(:address)

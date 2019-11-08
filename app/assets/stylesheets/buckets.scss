@@ -72,8 +72,9 @@
     div {
       align-content: center;
       max-height: 20vh;
-      overflow: hidden;
-      overflow: scroll;
+      overflow-x: hidden;
+      overflow-y: scroll;
+
       &:last-of-type {
       }
     }
@@ -97,9 +98,7 @@
 
   img {
    max-height: 20vh;
-   width: auto;
-
-   
+   width: auto;   
   }
 }
 

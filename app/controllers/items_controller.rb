@@ -59,7 +59,7 @@ class ItemsController < ApplicationController
 
   # Paramater sanitization
   def ensure_user
-    if Item.find(params[:id]).bucket.user != current_user
+    if (Item.find(params[:id]).bucket.user != current_user) && (current_user.has_role?(:admin) == false)
       flash[:alert] = "You are not authorized to view this page!"
       redirect_to root_path
     end

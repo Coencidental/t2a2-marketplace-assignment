@@ -87,8 +87,8 @@ class BucketsController < ApplicationController
   private
 
   def authorize_user
-    unless current_user == params(:bucket_id)
-      flash[:alert] = "You are not authorized to access this area!"
+    if (Bucket.find(params[:id]).user != current_user) && (current_user.has_role?(:admin) == false)
+      flash[:alert] = "You are not authorized to view this page!"
       redirect_to root_path
     end
   end
