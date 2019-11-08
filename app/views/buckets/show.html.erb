@@ -33,11 +33,11 @@
     </div>
     <% end %>
   <% end%>
-</div>
-  <%= link_to "Add an item", new_bucket_item_path(@bucket), class: "button is-link" %>
+  </div>
+  <%= link_to "Add an item", new_bucket_item_path(@bucket), class: "button is-link" if current_user == @user %>
   <% else %>
 </div>
-  <p><%= @bucket.name %> has no items yet!  <%= link_to "Add some now!", new_bucket_item_path(@bucket), class: "button is-link" %></p>
+  <p><%= @bucket.name %> has no items yet!  <%= link_to "Add some now!", new_bucket_item_path(@bucket), class: "button is-link" if current_user == @user %></p>
 <% end %>
 
 

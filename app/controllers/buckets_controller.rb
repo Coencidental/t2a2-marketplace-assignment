@@ -1,7 +1,8 @@
 class BucketsController < ApplicationController
   before_action :params_bucket, only: [:show, :edit, :update]
   before_action :authenticate_user!
-  
+  before_action :authorize_user, only: [:edit, :destroy]
+
   require 'geocoder'
 
   def index
@@ -47,7 +48,8 @@ class BucketsController < ApplicationController
   end
 
   def show
-
+    @bucket = Bucket.find(params[:id])
+    @user = @bucket.user
   end
 
   def new
@@ -83,6 +85,13 @@ class BucketsController < ApplicationController
   end
 
   private
+
+  def authorize_user
+    unless current_user == params(:bucket_id)
+      flash[:alert] = "You are not authorized to access this area!"
+      redirect_to root_path
+    end
+  end
 
   def params_bucket
     @bucket = Bucket.find(params[:id])

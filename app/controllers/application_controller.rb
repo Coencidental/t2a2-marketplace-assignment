@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
   before_action :check_messages, if: -> { current_user }
 
 
-
   protected
 
   def configure_permitted_parameters
