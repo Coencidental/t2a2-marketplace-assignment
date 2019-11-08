@@ -2,6 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'colours';
+
 .editaddress {
   margin-top: 0.5rem;
+}
+
+.location {
+  width: fit-content;
+  display: inline-block;
+  margin: 1rem auto;
+  padding: 1rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: $darknavy;
+  color: $parchment;
+}
+
+.userlocation {
+  
+  margin: 1rem auto;
+  padding: 1rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: $darknavy;
+  color: $parchment;
 }
