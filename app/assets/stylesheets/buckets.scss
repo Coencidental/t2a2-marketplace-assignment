@@ -26,11 +26,28 @@
   color: $parchment;
 }
 
+.bucket {
+  background-color: $darknavy;
+  .itemcard {
+    width: 95%;
+    margin: 0 auto;
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
 .itemcard {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  background-color: rgb(185, 185, 185);
+  justify-content: space-evenly;
+  background-color: $coal;
+  padding: 0.25rem;
+  width: 100vw;
+
+  div {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+  }
 }
 
 .user_buckets {
@@ -39,21 +56,24 @@
   justify-content: center;
   text-align: center;
   background-color: $darknavy;
-  padding: 0.5rem;
+  max-width: 95vw;
+  margin: 0 auto;
 
   .bucket_card {
-    width: 100%;
-    padding: 0.25rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     background-color: $coal;
     border-radius: 0.25rem;
-    border: 0.25 rem solid lightgrey;
     color: $parchment;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
 
     div {
       align-content: center;
+      max-height: 20vh;
+      overflow: hidden;
+      overflow: scroll;
       &:last-of-type {
       }
     }
@@ -65,4 +85,44 @@
 }
 
 .allbuckets {
+}
+
+.item_thumbnail {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: auto;
+  margin: auto 0;
+  overflow: scroll;
+
+  img {
+   max-height: 20vh;
+   width: auto;
+
+   
+  }
+}
+
+.new_bucket {
+  background-color: $coal;
+  padding: 0.25rem 0.25rem 2rem 0.25rem;
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 0.25rem;
+}
+
+.form {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  p {
+    background-color: $coal;
+    * {
+      width: 50vw;
+      text-align: center;
+      padding: 0.25rem;
+    }
+  }
 }

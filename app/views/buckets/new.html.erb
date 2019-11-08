@@ -4,8 +4,12 @@
 
 <%= form_with model: @bucket, local: true do |f| %>
 
-<p><%= f.text_field :name, placeholder: "Enter a bucket name" %></p>
-<p><%= f.text_area :description, placeholder: "Enter a bucket description" %></p>
-<p><%= f.submit %></p>
+<div class="form">
+
+  <p><%= f.text_field :name, placeholder: "Enter a bucket name" %></p>
+  <p><%= f.text_area :description, placeholder: "Enter a bucket description" %></p>
+  <p><%= f.submit %></p>
+
+</div>
 
 <% end %>

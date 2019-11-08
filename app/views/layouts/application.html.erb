@@ -44,8 +44,8 @@
       <%= link_to 'Sign in', new_user_session_path, class: "button navlink" %>
     </div>
     <% end %>
-      
-    <%= render 'layouts/alerts' %>
+    <div class="alerts"><%= render 'layouts/alerts' %></div>
+    
     <div class="bodycontent">
     <%= yield %>
   </div>

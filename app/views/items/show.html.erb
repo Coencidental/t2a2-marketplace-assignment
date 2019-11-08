@@ -26,4 +26,4 @@
   <% end %>
 </div>
 
-<span class="item_image"><%= image_tag @item.image, width: 500 if @item.image.attached? %></span>
+<span class="item_image"><%= image_tag @item.image if @item.image.attached? %></span>

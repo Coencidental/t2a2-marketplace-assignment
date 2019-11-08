@@ -3,13 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'colours';
 
-.item_card {
+.itemcard {
   display: flex;
   flex-direction: row;
-  border: 1px solid red;
   justify-content: space-evenly;
-  background-color: $parchment;
-  flex-wrap: wrap;
+  background-color: $coal;
+  max-height: 25vh;
+  padding: 0.5rem;
+
+  div {
+    overflow: scroll;
+    width: 33.33%;
+
+  }
 }
 
 .item_image {

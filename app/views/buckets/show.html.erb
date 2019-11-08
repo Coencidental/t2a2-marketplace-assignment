@@ -7,7 +7,7 @@
 
 
 <% if @bucket.items.count > 0 %>
-
+  <div class="user_buckets">
   <% @bucket.items.each do |item| %>
     <% if item.sold == false %>
 
@@ -25,12 +25,15 @@
         <p><%= item.description %></p>
         <p><%= item.returnable %></p>
       </div>
+      <% if item.image.attached? %>
       <div class="item_thumbnail">
-        <span><%= image_tag item.image if item.image.attached? %></span>
+        <span><%= image_tag item.image %></span>
       </div>
+      <% end %>
     </div>
     <% end %>
   <% end%>
+</div>
   <%= link_to "Add an item", new_bucket_item_path(@bucket), class: "button is-link" %>
   <% else %>
 </div>

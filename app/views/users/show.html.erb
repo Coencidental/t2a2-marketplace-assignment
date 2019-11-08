@@ -7,6 +7,13 @@
 
 <p><%= link_to "View your location page", location_path(@user.location) %></p>
 
+<% @sold.each do |item| %>
+
+<%= link_to item.name, bucket_item_path(item) %>
+
+<% end %>
+
+<p><% %></p>
 <% end %>
 </div>
 <div class="profile">

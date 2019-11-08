@@ -114,6 +114,7 @@
   justify-content: center;
   text-align: center;
   color: $lightblue;
+  margin-top: 1rem;
 }
 
 .title {
@@ -141,17 +142,7 @@
   }
 }
 
-.bucket {
 
-  background-color: $darknavy;
-  .itemcard {
-    width: 75%;
-    margin: 0 auto;
-
-    border-radius: 0.25rem;
-    margin-bottom: 0.5rem;
-  }
-}
 
 body {
   background-color: $darknavy;
@@ -161,10 +152,18 @@ body {
 *:link {
 }
 
-.item_thumbnail {
+
+
+.alerts {
+  color: $parchment;
   width: 50%;
-  padding: 0.25rem;
-  margin: auto;
+  margin: 0 auto;
+  text-align: center;
+  background-color: $coal;
+
+  p {
+
+  }
 }
 
 @import '../../../node_modules/bulma/sass/utilities/_all.sass';
