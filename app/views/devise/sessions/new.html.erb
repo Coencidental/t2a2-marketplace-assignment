@@ -15,8 +15,8 @@
   </div>
 
   <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
+    <div class="field remember_me">
+      <%= f.check_box :remember_me, class: "remember"%>
       <%= f.label :remember_me %>
     </div>
   <% end %>
@@ -25,6 +25,7 @@
     <%= f.submit "Log in", class: "button is-link login" %>
   </div>
 <% end %>
+
 <div class="helplinks">
 <%= render "devise/shared/links" %>
 </div>
