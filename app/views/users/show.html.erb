@@ -5,7 +5,9 @@
 
 <p>Welcome back, <%= @user.username %>!</p>
 
-<p><%= link_to "View your location page", location_path(@user.location) %></p>
+<p><%= link_to "View your location page", location_path(@user.location), class: "location" %></p>
+
+<p>All of your sold items:</p>
 
 <% @sold.each do |item| %>
 
@@ -16,6 +18,7 @@
 <p><% %></p>
 <% end %>
 </div>
+
 <div class="profile">
 
 <p>Username: <%= @user.username %></p>

@@ -5,7 +5,7 @@
   <p>Brand: <%= @item.brand %></p>
   <p>Returns policy: <%= @item.returnable %></p>
 </div>
-
+<%= link_to("Send payment now", new_order_path(@item), class: 'button is-link payment') %>
 <% if @item.tagwords.count >= 1 %>
   <div class="tagwords">
     <p>Tagwords:</p>
@@ -17,6 +17,8 @@
   </div>
 <% end %>
 
+<% if @item.bucket.user == current_user %>
+
 <div class="tagword_new">
   <%= form_with scope: :tagword, method: 'post', controller: 'tagwords', action: 'create', local: true do |f| %>
 
@@ -25,5 +27,7 @@
 
   <% end %>
 </div>
+
+<% end %>
 
 <span class="item_image"><%= image_tag @item.image if @item.image.attached? %></span>

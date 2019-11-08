@@ -1,8 +1,10 @@
-<h1>Orders#new</h1>
-<p>Find me in app/views/orders/new.html.erb</p>
+<div class="stripe_portal">
+<p>Name: <%= @item.name %></p>
+<p>Your final sum: <%= @item.price %></p>
+<p>Sending payment to: <%= @item.bucket.user.username %></p>
+<button id="checkout">Checkout Now</button>
 
-<button id="checkout">Checkout</button>
-
+</div>
 <script src="https://js.stripe.com/v3/"></script>
 
 <script>

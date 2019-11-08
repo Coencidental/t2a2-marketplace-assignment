@@ -1,3 +1,26 @@
 // Place all the styles related to the orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'colours';
+
+.stripe_portal {
+  background-color: $coal;
+  width: 75vw;
+  margin: 0 auto;
+  border-radius: 0.25rem;
+  padding: 1rem;
+
+  button {
+    width: 25vw;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    background-color: $streetlight;
+    border: none;
+    border-radius: 0.25rem;
+
+    &:hover {
+      background-color: $lightblue;
+    }
+  }
+}

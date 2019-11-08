@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'orders/:item_id', to: 'orders#new', as: 'new_order'
   get 'locations/new', to: 'locations#new', as: 'new_location'
   post 'locations/new', to: 'locations#create'
+  post 'buckets/:bucket_id/items/new', to: 'items#create'
   post 'buckets/:bucket_id/items/:item_id/edit', to: 'items#update'
   post 'buckets/:bucket_id/items/:item_id', to: 'tagwords#create'
   get 'buckets/:bucket_id/items/:item_id/:tagword/remove', to: 'tagwords#remove', as: 'tagword_remove'

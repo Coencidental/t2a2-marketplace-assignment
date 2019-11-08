@@ -27,6 +27,17 @@
   color: $parchment;
   background-color: $coal;
   width: 80%;
+  height: fit-content;
+  padding: 0.5rem 0;
   margin: 0 auto;
   border-radius: 0.25rem;
+}
+
+.location {
+  font-size: 1rem;
+  padding: 0.25rem;
+  
+  &:hover {
+    background-color: $streetlight;
+  }
 }

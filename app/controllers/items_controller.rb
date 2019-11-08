@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
   def create 
     @bucket = Bucket.find(params[:bucket_id])
     @item = @bucket.items.new(item_params)
-    # @item.image.attach(item_params[:image])
+    @item.image.attach(item_params[:image])
     if @item.save
       redirect_to bucket_path(@bucket)
     else
