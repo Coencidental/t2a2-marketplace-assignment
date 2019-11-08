@@ -14,11 +14,18 @@
 .contactcard {
   width: 50%;
   padding: 0.5rem 1rem;
-  background-color: $streetlight;
+  background-color: $coal;
   justify-content: center;
   margin: 0 auto;
   display: flex;
   font-style: none;
-  color: white;
+  
+  &:hover {
+    background-color: $streetlight;
+  }
+
+  a {
+    color: $parchment;
+  }
 
 }
