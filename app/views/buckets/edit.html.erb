@@ -1,11 +1,14 @@
 <%= render 'shared/errors', object:@bucket %>
+<div class="newbucket">
 
-<h1>Edit <%= @bucket.name %></h1>
+  <h1>Edit "<%= @bucket.name %>"</h1>
 
-<%= form_with model: @bucket, local: true do |f| %>
+  <%= form_with model: @bucket, local: true do |f| %>
 
-<p><%= f.text_field :name %></p>
-<p><%= f.text_area :description %></p>
-<p><%= f.submit %></p>
+  <p><%= f.text_field :name %></p>
+  <p><%= f.text_area :description %></p>
+  <p><%= f.submit class: "button is-link" %></p>
 
-<% end %>
+  <% end %>
+
+</div>

@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   
   def show
+    
+
     @user = User.find_by(id: params[:id])
     @sold = []
     @user.buckets.each do |bucket|

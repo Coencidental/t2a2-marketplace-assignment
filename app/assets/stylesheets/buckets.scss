@@ -104,13 +104,13 @@
   justify-content: center;
   text-align: center;
   background-color: $darknavy;
-  max-width: 95vw;
+  width: 95vw;
   margin: 0 auto;
 
   .bucket_card {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     background-color: $coal;
     border-radius: 0.25rem;
     color: $parchment;
@@ -119,11 +119,29 @@
 
     div {
       align-content: center;
-      max-height: 20vh;
+      max-height: 25vh;
       overflow-x: hidden;
       overflow-y: scroll;
 
       &:last-of-type {
+      }
+    }
+
+    .edit_destroy {
+      width: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      flex-wrap: none;
+
+      p {
+        padding: 0.25rem 0.5rem;
+      }
+
+      .button.is-link {
+        font-size: 0.8rem;
+        width: auto;
+        background-color: $streetlight;
       }
     }
 
@@ -170,6 +188,43 @@
       width: 50vw;
       text-align: center;
       padding: 0.25rem;
+    }
+  }
+}
+
+.newbucket {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80vw;
+  background-color: $coal;
+  padding: 0.5rem;
+  margin: 0 auto;
+  
+  .button.is-link {
+    font-size: 1;
+    text-align: center;
+    padding: 0.5rem;
+    height: auto;
+    width: 50%;
+    margin: 0.5rem auto;
+
+  }
+
+  * {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    input, textarea {
+      width: 75%;
+      margin-bottom: 0.25rem;
+      padding: 1rem;
     }
   }
 }

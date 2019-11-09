@@ -8,13 +8,13 @@
 
   <div class="bucket_card">
     <div>
-      <td><p><%= link_to bucket.name, bucket_path(bucket) %></p></td>
-      <td><p><%= bucket.description %></p></td>
+      <p><%= link_to bucket.name, bucket_path(bucket) %></p>
+      <p>"<%= bucket.description %>"</p>
     </div>
-    <% if (bucket.user == current_user) %>
-    <div>
-      <td><%= link_to "Delete this bucket", bucket_destroy_path(bucket), :data => {:confirm => 'Are you sure?  This will delete any items in the bucket too.'} %></td>
-      <td><%= link_to "Edit this bucket", edit_bucket_path(bucket) %></td>
+    <% if (bucket.user == current_user) || (current_user.has_role?(:admin)) %>
+    <div class="edit_destroy">
+      <p><%= link_to "Delete", bucket_destroy_path(bucket), :data => {:confirm => 'Are you sure?  This will delete any items in the bucket too.'}, class: "button is-link" %></p>
+      <p><%= link_to "Edit", edit_bucket_path(bucket), class: "button is-link" %></p>
     </div>
     <% end %>
   </div>
