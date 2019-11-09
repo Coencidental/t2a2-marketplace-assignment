@@ -2,7 +2,11 @@
 
 <div class="bucket_title">
   <h1><%= @bucket.name %></h1>
-  <p><%= @bucket.description %></p>
+  <p>"<%= @bucket.description %>"</p>
+  <% if current_user == @bucket.user %>
+    <%= link_to "Edit Bucket", edit_bucket_path(@bucket), class: "button is-link" %>
+    <%= link_to "Delete Bucket", bucket_destroy_path(@bucket), :data => {:confirm => 'Are you sure?  This will delete any items in the bucket too.'}, class: "button is-link" %>
+  <% end %>
 </div>
 
 

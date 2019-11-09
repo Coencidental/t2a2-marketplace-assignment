@@ -4,6 +4,10 @@
   <p>Price: <%= link_to (number_to_currency @item.price), new_order_path(@item) %></p>
   <p>Brand: <%= @item.brand %></p>
   <p>Returns policy: <%= @item.returnable %></p>
+  <% if current_user == @item.bucket.user %>
+  <p><%= link_to "Edit this item", edit_bucket_item_path(@item.bucket, @item), class: "button is-link" %></p>
+  <p><%= link_to "Delete this item", bucket_item_destroy_path(@item.bucket, @item), :data => {:confirm => 'Are you sure?'}, class: "button is-link" %></p>
+  <% end %>
 </div>
 <%= link_to("Send payment now", new_order_path(@item), class: 'button is-link payment') %>
 <% if @item.tagwords.count >= 1 %>

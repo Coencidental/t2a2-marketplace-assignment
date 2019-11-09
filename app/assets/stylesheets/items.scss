@@ -92,6 +92,7 @@
   width: 75vw;
   margin: 0 auto;
   padding: 0.5rem;
+  border-radius: 0.5rem;
 
   h1 {
     border: 0.25rem solid $lightblue;
@@ -102,12 +103,17 @@
   }
 
   p {
-    padding: 0.25rem;
+    padding: 0.5rem;
     border-bottom: 0.25rem solid $lightblue;
 
     &:first-of-type {
       border-top: 0.25rem solid $lightblue;
       margin-top: 0.5rem;
     }
+  }
+
+  .button.is-link {
+    font-size: 1rem;
+    background-color: $darknavy;
   }
 }

@@ -93,32 +93,7 @@
   background-color: $streetlight;
 }
 
-.bucketcard {
-  width: 80vw;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin-bottom: 1rem;
-  border: 0.25rem solid $parchment;
-  border-radius: 0.25rem;
-  background-color: $coal;
 
-  div {
-    width: auto;
-    text-align: center;
-    justify-content: center;
-    padding: 1rem 1rem;
-
-    
-
-    p {
-
-
-      padding: 0.25rem;
-    }
-  }
-}
 
 .bodycontent {
   display: flex;
