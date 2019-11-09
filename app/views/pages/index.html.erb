@@ -1,7 +1,7 @@
-<h1 class="welcome">Welcome to Streetlight, <%= current_user.username %>.</h1>
+<h1 class="welcome">Welcome to Streetlight, <span class="glow"><%= current_user.username %></span>.</h1>
 
 <div class="homepage_links">
 <%= link_to "Browse current item buckets", buckets_path, class: "button is-link" %>
 <%= link_to "View your conversations", conversations_path, class: "button is-link" %>
-<%= link_to "Create a new bucket of your own", new_bucket_path, class: "button is-link" %>
+<%= link_to "Create a new bucket", new_bucket_path, class: "button is-link" %>
 </div>

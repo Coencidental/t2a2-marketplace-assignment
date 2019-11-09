@@ -16,7 +16,7 @@
 <ul>
   <% @users.each do |user| %>
     <% if user != current_user %>
-      <li><%= link_to user.username, conversations_path(sender_id: current_user.id, receiver_id: user.id), method: :post %></li>
+      <li><%= link_to user.username, conversations_path(sender_id: current_user.id, receiver_id: user.id), method: :post, class: "userlink button is-link" %></li>
     <% end %>
     <% end %>
 </ul>

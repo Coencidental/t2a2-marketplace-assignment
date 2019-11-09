@@ -7,8 +7,10 @@
 .conversations {
   display: flex;
   flex-direction: row;
-  width: 80vw;
-  margin: 0 auto;
+  // width: 80vw;
+  margin: 1rem auto; 
+  border-bottom: 0.5rem solid $streetlight;
+  border-radius: 0.25rem;
 }
 
 .contactcard {
@@ -28,4 +30,9 @@
     color: $parchment;
   }
 
+}
+
+.userlink.button.is-link {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
 }

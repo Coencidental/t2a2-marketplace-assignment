@@ -82,8 +82,8 @@
 }
 
 #map {
-  width: 80vw;
-  height: 50vh;
+  width: 95vw;
+  height: 55vh;
   margin: 2rem auto;
   border-radius: 1.5rem;
   transition: 1s;
@@ -148,7 +148,7 @@
   border-radius: 0.25rem;
 
   .button.is-link {
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin: 0.25rem 0;
     
   }
@@ -157,7 +157,7 @@
 
 
 body {
-  background-color: $darknavy;
+  background: $darknavy !important; 
   height: fit-content;
 }
 
@@ -184,6 +184,10 @@ body {
   width: 75vw;
   margin: 1rem auto 0 auto;
   border-radius: 0.25rem;
+}
+
+.glow {
+  text-shadow: 0 0 0.25rem rgb(170, 170, 3);
 }
 
 @import '../../../node_modules/bulma/sass/utilities/_all.sass';

@@ -1,6 +1,6 @@
 <div class="stripe_portal">
 <p>Name: <%= @item.name %></p>
-<p>Your final sum: <%= @item.price %></p>
+<p>Your final sum: <%= number_to_currency(@item.price) %> AUD</p>
 <p>Sending payment to: <%= @item.bucket.user.username %></p>
 <button id="checkout">Checkout Now</button>
 
