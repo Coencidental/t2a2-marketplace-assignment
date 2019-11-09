@@ -41,6 +41,7 @@
     <% else %>
     <div class="navbar">
       <%= link_to 'Sign up', new_user_registration_path, class: "button navlink" %>
+      <div class="navbar_logo unverified"><span class="logosvg"><%= image_tag("logo.svg") %></span></div>
       <%= link_to 'Sign in', new_user_session_path, class: "button navlink" %>
     </div>
     <% end %>
