@@ -127,9 +127,9 @@ Manipulating Active Record associations simplifies the layout of data, especiall
 - User to Location: enables location/geolocation services in Streetlight
 - User to Conversations: enables private 'message rooms', to allow for private message, and retrieval by relevant users.
 - User to Messages:  enables private messaging, and retrieval by relevant users.
-- User to Buckets
-- Buckets to Items
-- Tagword to Items
+- User to Buckets: enables association of respective bucket items with an owner.
+- Buckets to Items: enables association of items with a bucket.
+- Tagword to Items: enables filtering and global classification of items.
 
 ### Schemas:
 
