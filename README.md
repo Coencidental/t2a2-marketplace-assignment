@@ -50,7 +50,7 @@ The functionality of Streetlight is as a minimal interface, multi-platform and e
 
 ### Sitemap
 
-The Streetlight sitemap is available at 'docs/site_map.png', or alternatively at https://drive.google.com/file/d/1DIEKTmQH2cZXjtuXCP3Kulih4hQj9uqW/view?usp=sharing
+The Streetlight sitemap is available at 'docs/examples/site_map.png', or alternatively at https://drive.google.com/file/d/1DIEKTmQH2cZXjtuXCP3Kulih4hQj9uqW/view?usp=sharing
 
 ### Screenshots
 
@@ -86,6 +86,10 @@ All user stories are accessible online at:
 https://docs.google.com/spreadsheets/d/1IfTSPspJQ_SWgLiBaWXZ3skLADvthpWR4TQH2eACw2A/edit?usp=sharing
 
 Otherwise, they can be located at 'docs/planning/user_stories.pdf'
+
+## Wireframes:
+
+All wireframes are available at 'docs/examples/wf_(x).png', or alternatively at https://drive.google.com/drive/folders/1_kQjisdjRtWFhih13zre9UItkVHawziE?usp=sharing
 
 ## Database Design:
 
