@@ -234,3 +234,30 @@ Finally, to allow for user-to-user transactions independently of the status of S
 Stripe is a developer friendly alternative to PayPal, that provides simple components and intuitive set up to allow for functional and reliable payment portals within a very short time frame of work.
 
 The function Stripe performs in this case is placing the user into a tunnel, intermediary redirect between Streetlight and Stripe, which itself is dynamically generated depending on the API call itself.  With the implementation of the Stripe gem to process the application-side requirements, only the parameters of the purchases themselves need to be passed in, and a user can directly be linked to an appropriate and reassuring payment portal.  
+
+## Extensible Features/Future Improvements
+
+The entire design of Streetlight is as a robust, widely applicable proof of concept in a geopositioning based marketplace application.  With such a general target group and list of required functions, the simplified model presented in the MVP release has a number of features that could use very significant extensibility considerations.  
+
+### Mapping
+
+The use of an interactive map was the first and most crucial aspect of Streetlight functioning as I had hoped when I conceived of it.  However, in the actual development of it, I realised that as a concept, it would work just as effectively in the first person.  With the increasing popularity of interactive, virtual mediums (VR), a truly interactive browsing experience is a very interesting concept.  As such, in the future I would like to extend Google Maps 'Street View' feature (or build something that works alongside a similiar technology) to allow the application user to follow a route in the first person, and see interactive graphics to represent the shop/user locations.
+
+### Profiles
+
+In this MVP demonstration, the user side of the application was not the driving focus.  As such, there is minimal significance to the profile system at this point, and there are issues with it having no associated, accountable first name and surname.  This definitely requires addressing in the future.  Additionally, the profile system would massively benefit from extra features such as user profile pictures, customized browsing experience features such as better filtering by interests, and also the implementation of a group system, where only particular people are able to see certain items or users.  This would be useful in closed-circle trade groups, such as when there are shopping promotions and collectable items, for example, but has the potential downside of facilitating local crime.  
+
+### Messaging
+
+As a predominant feature in the application and the user experience in purchasing/bartering, the messaging system alongside the mapping was one of the most significant technologies in the function of Streetlight.  As it exists at this point, users communicate via a simple private messaging system wherein users are associated with many conversations, and each conversation is associated with many messages.  However, the instant factor in messaging is a vital aspect to fluid and efficient conversation (or barter in this case), so all efforts should be taken in the future to extend the functionality of the user messaging system to allow for INSTANT private messaging.
+
+Additionally, a user should be able to directly access a conversation from a profile page, so as to easily facilitate contact between users.  
+
+### Administration
+
+While administration privileges exist within Streetlight, the implementation is relatively spread out across the application, and as an administrator, it would be hugely beneficial to be able to perform all relevant management from a single dashboard.  This should be designed to allow efficient and thorough browsing of the website, and allow an admin to perform all necessary tasks in one place, as well as leave notes for other admins and report items.
+
+### User experience
+
+The user experience at this point is skeletal, reflecting only the most simple actions a user would undertake.  However, many fairly vital and commonly used tools are absent from Streetlight, most notably the ability to report users/buckets/items to administrators, comment on items, search for items EFFECTIVELY, remove and edit images from item posts, and to easily navigate between the pages required.  All of these require addressing going on from MVP status.  
+
