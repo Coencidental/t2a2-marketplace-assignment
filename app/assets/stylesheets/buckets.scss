@@ -122,6 +122,7 @@
       max-height: 25vh;
       overflow-x: hidden;
       overflow-y: scroll;
+      width: 50%;
 
       &:last-of-type {
       }
@@ -133,6 +134,7 @@
       flex-direction: row;
       justify-content: space-evenly;
       flex-wrap: none;
+      padding: 0.25rem;
 
       p {
         padding: 0.25rem 0.5rem;
@@ -226,5 +228,21 @@
       margin-bottom: 0.25rem;
       padding: 1rem;
     }
+  }
+}
+
+.noitems {
+  width: 75vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-content: center;
+  background-color: $coal;
+  border-radius: 0.25rem;
+  margin: 0 auto;
+  padding: 0.5rem;
+
+  .button.is-link {
+    font-size: 1rem;
   }
 }

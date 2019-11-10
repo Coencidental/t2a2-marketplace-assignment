@@ -29,9 +29,10 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: $parchment;
+  background-color: $coal;
   width: 80vw;
   margin: 0.5rem auto;
+  padding: 1rem 2rem;
 
   p {
     &:first-of-type {
@@ -89,17 +90,18 @@
   background-color: $coal;
   display: flex;
   flex-direction: column;
-  width: 75vw;
+  width: 80vw;
   margin: 0 auto;
   padding: 0.5rem;
   border-radius: 0.5rem;
 
   h1 {
     border: 0.25rem solid $lightblue;
-    width: fit-content;
+    width: 100%;
     border-radius: 0.25rem;
     padding: 0.5rem 2rem;
     margin: 0 auto;
+    font-size: 1.25rem;
   }
 
   p {
@@ -107,9 +109,11 @@
     border-bottom: 0.25rem solid $lightblue;
 
     &:first-of-type {
-      border-top: 0.25rem solid $lightblue;
+      // border-top: 0.25rem solid $lightblue;
       margin-top: 0.5rem;
     }
+
+    word-break: break-all;
   }
 
   .button.is-link {

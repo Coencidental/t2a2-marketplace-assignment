@@ -1,15 +1,17 @@
+<%= link_to("Send payment now", new_order_path(@item), class: 'button is-link payment') %>
+
 <div class="item">
   <h1><%= @item.name %></h1>
   <p>Description: <%= @item.description %></p>
   <p>Price: <%= link_to (number_to_currency @item.price), new_order_path(@item) %></p>
   <p>Brand: <%= @item.brand %></p>
-  <p>Returns policy: <%= @item.returnable %></p>
-  <% if current_user == @item.bucket.user %>
+  <div class="iteminfo"><p>Returns policy: <%= @item.returnable %></p></div>
+  
+  <% if current_user == @item.bucket.user || current_user.has_role?(:admin) %>
   <p><%= link_to "Edit this item", edit_bucket_item_path(@item.bucket, @item), class: "button is-link" %></p>
   <p><%= link_to "Delete this item", bucket_item_destroy_path(@item.bucket, @item), :data => {:confirm => 'Are you sure?'}, class: "button is-link" %></p>
   <% end %>
 </div>
-<%= link_to("Send payment now", new_order_path(@item), class: 'button is-link payment') %>
 <% if @item.tagwords.count >= 1 %>
   <div class="tagwords">
     <p>Tagwords:</p>

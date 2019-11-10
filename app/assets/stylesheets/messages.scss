@@ -37,9 +37,14 @@
 .yourmessage {
   padding: 0.5rem;
 
-  input {
+  textarea {
     width: 50%;
+    border: 1px solid red;
+    min-height: 10vh;
+    max-height: 25vh;
   }
+
+
 
   .messagebox {
     width: 80%;
