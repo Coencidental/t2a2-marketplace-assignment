@@ -50,7 +50,7 @@ The functionality of Streetlight is as a minimal interface, multi-platform and e
 
 ### Sitemap
 
-The Streetlight sitemap is available at 'docs/examples/site_map.png', or alternatively at https://drive.google.com/file/d/1DIEKTmQH2cZXjtuXCP3Kulih4hQj9uqW/view?usp=sharing
+The Streetlight sitemap is available at 'docs/planning/site_map.png', or alternatively at https://drive.google.com/file/d/1DIEKTmQH2cZXjtuXCP3Kulih4hQj9uqW/view?usp=sharing
 
 ### Screenshots
 
@@ -89,7 +89,7 @@ Otherwise, they can be located at 'docs/planning/user_stories.pdf'
 
 ## Wireframes:
 
-All wireframes are available at 'docs/examples/wf_(x).png', or alternatively at https://drive.google.com/drive/folders/1_kQjisdjRtWFhih13zre9UItkVHawziE?usp=sharing
+All wireframes are available at 'docs/planning/wf_(x).png', or alternatively at https://drive.google.com/drive/folders/1_kQjisdjRtWFhih13zre9UItkVHawziE?usp=sharing
 
 ## Database Design:
 
@@ -178,6 +178,10 @@ Manipulating Active Record associations simplifies the layout of data, especiall
 
     Tag : References
     Item : References
+
+## Task allocation during development
+
+In order to keep track of required tasks during the two week period, I used a physical whiteboard to map out the features I required.  Due to a lot of the changes that the design had to undergo during development, it was far simpler to be able to wipe out a section of the whiteboard and replace it with desired changes.
 
 
 ### Third party services:
